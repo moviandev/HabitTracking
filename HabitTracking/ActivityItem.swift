@@ -12,4 +12,8 @@ struct ActivityItem: Identifiable, Codable {
     let title: String
     let description: String
     var completionCounter: Int
+    
+    mutating func incrementCompletionCycle() {
+        completionCounter += 1
+    }
 }
