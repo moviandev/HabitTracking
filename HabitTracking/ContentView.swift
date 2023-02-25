@@ -12,14 +12,40 @@ struct ContentView: View {
     @State private var showingAddHabit = false
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            List {
+                ForEach(activities.activitiesItem) { habit in
+                    NavigationLink {
+                        Text("\(habit.id)")
+                    } label: {
+                        Text(habit.title)
+                    }
+                }
+                .onDelete { indexSet in
+                    activities.activitiesItem.remove(atOffsets: indexSet)
+                }
+                
+            }
+            .navigationTitle("Habit Tracking")
+            .toolbar {
+                ToolbarItem(placement: .bottomBar) {
+                    EditButton()
+                }
+                
+                ToolbarItem(placement: .bottomBar) {
+                    Button {
+                        showingAddHabit = true
+                    } label: {
+                        Image(systemName: "plus.app")
+                    }
+                }
+            }
+            .sheet(isPresented: $showingAddHabit) {
+                AddView(activities: activities)
+            }
         }
-        .padding()
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
