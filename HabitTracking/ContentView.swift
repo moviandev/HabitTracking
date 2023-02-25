@@ -18,7 +18,18 @@ struct ContentView: View {
                     NavigationLink {
                         Text("\(habit.id)")
                     } label: {
-                        Text(habit.title)
+                        HStack {
+                            Text(habit.title)
+                                .font(.headline)
+                                .foregroundColor(.primary)
+                            
+                            Text("|")
+                                .foregroundStyle(.secondary)
+                            
+                            Text("Completed: \(habit.completionCounter)")
+                                .font(.headline)
+                                .foregroundColor(.primary.opacity(0.5))
+                        }
                     }
                 }
                 .onDelete { indexSet in
