@@ -8,13 +8,35 @@
 import SwiftUI
 
 struct AddView: View {
+    @Environment(\.dismiss) var dismiss
+    @ObservedObject var activities: Activities
+    
+    @State private var title = ""
+    @State private var description = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            Form {
+                TextField("Habit", text: $title)
+                
+                TextField("Habit Description", text: $description)
+            }
+            .navigationTitle("Add New Habit")
+            .toolbar {
+                Button {
+                    let newActivity = ActivityItem(title: title, description: description)
+                    activities.activitiesItem.append(newActivity)
+                    dismiss()
+                } label: {
+                    Image(systemName: "plus.square.on.square")
+                }
+            }
+        }
     }
 }
 
 struct AddView_Previews: PreviewProvider {
     static var previews: some View {
-        AddView()
+        AddView(activities: Activities())
     }
 }
