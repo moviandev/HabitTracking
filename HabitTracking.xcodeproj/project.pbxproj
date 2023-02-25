@@ -11,6 +11,7 @@
 		BB7C306F29A9A07F00E7B8AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7C306E29A9A07F00E7B8AE /* ContentView.swift */; };
 		BB7C307129A9A08000E7B8AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB7C307029A9A08000E7B8AE /* Assets.xcassets */; };
 		BB7C307429A9A08000E7B8AE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB7C307329A9A08000E7B8AE /* Preview Assets.xcassets */; };
+		BB7C307B29A9A14300E7B8AE /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7C307A29A9A14300E7B8AE /* Activity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		BB7C306E29A9A07F00E7B8AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BB7C307029A9A08000E7B8AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB7C307329A9A08000E7B8AE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BB7C307A29A9A14300E7B8AE /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				BB7C306C29A9A07F00E7B8AE /* HabitTrackingApp.swift */,
+				BB7C307A29A9A14300E7B8AE /* Activity.swift */,
 				BB7C306E29A9A07F00E7B8AE /* ContentView.swift */,
 				BB7C307029A9A08000E7B8AE /* Assets.xcassets */,
 				BB7C307229A9A08000E7B8AE /* Preview Content */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB7C307B29A9A14300E7B8AE /* Activity.swift in Sources */,
 				BB7C306F29A9A07F00E7B8AE /* ContentView.swift in Sources */,
 				BB7C306D29A9A07F00E7B8AE /* HabitTrackingApp.swift in Sources */,
 			);
