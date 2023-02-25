@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var activities = Activities()
+    @State private var showingAddHabit = false
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
