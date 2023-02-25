@@ -16,7 +16,7 @@ struct ContentView: View {
             List {
                 ForEach(habits.habitItems) { habit in
                     NavigationLink {
-                        Text("\(habit.id)")
+                        HabitView(habit: habit, habits: habits)
                     } label: {
                         HStack {
                             Text(habit.title)
@@ -26,7 +26,7 @@ struct ContentView: View {
                             Text("|")
                                 .foregroundStyle(.secondary)
                             
-                            Text("Completed: \(habit.completionCounter)")
+                            Text("Checked: \(habit.completionCounter)")
                                 .font(.headline)
                                 .foregroundColor(.primary.opacity(0.5))
                         }

@@ -26,4 +26,11 @@ class Habits: ObservableObject {
             }
         }
     }
+    
+    func incrementHabitCompletion(_ habit: HabitItem) {
+        if let i = habitItems.firstIndex(of: habit) {
+            habitItems[i].incrementCompletionCycle()
+            habitItems = habitItems
+        }
+    }
 }
