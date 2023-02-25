@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddView: View {
     @Environment(\.dismiss) var dismiss
-    @ObservedObject var activities: Activities
+    @ObservedObject var habits: Habits
     
     @State private var title = ""
     @State private var description = ""
@@ -24,8 +24,8 @@ struct AddView: View {
             .navigationTitle("Add New Habit")
             .toolbar {
                 Button {
-                    let newActivity = ActivityItem(title: title, description: description)
-                    activities.activitiesItem.append(newActivity)
+                    let newHabit = HabitItem(title: title, description: description)
+                    habits.habitItems.append(newHabit)
                     dismiss()
                 } label: {
                     Image(systemName: "plus.square.on.square")
@@ -37,6 +37,6 @@ struct AddView: View {
 
 struct AddView_Previews: PreviewProvider {
     static var previews: some View {
-        AddView(activities: Activities())
+        AddView(habits: Habits())
     }
 }

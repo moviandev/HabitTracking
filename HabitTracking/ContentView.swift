@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var activities = Activities()
+    @StateObject var habits = Habits()
     @State private var showingAddHabit = false
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(activities.activitiesItem) { habit in
+                ForEach(habits.habitItems) { habit in
                     NavigationLink {
                         Text("\(habit.id)")
                     } label: {
@@ -33,7 +33,7 @@ struct ContentView: View {
                     }
                 }
                 .onDelete { indexSet in
-                    activities.activitiesItem.remove(atOffsets: indexSet)
+                    habits.habitItems.remove(atOffsets: indexSet)
                 }
                 
             }
@@ -52,7 +52,7 @@ struct ContentView: View {
                 }
             }
             .sheet(isPresented: $showingAddHabit) {
-                AddView(activities: activities)
+                AddView(habits: habits)
             }
         }
     }
